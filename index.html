@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>David's Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">David's Portfolio</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about" class="section">
+            <div class="container">
+                <h1>Hi, I'm David.</h1>
+                <h2>About Me</h2>
+                <p>I am a software developer focused on building clean, efficient, and scalable applications. I also dabble in content creation, primarily YouTube, which consists of
+                    vlog-style content as I love the process of scripting, shooting and editing videos.
+                </p>
+                <a href="#projects" class="btn primary-btn">View My Work</a>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <div class="container">
+                <h2>Featured Projects</h2>
+                
+                <div class="grid-container">
+                    <div class="card">
+                        <h4>Blog Site</h4>
+                        <p>Created my own blog hosted on my Raspberry Pi. Used Hugo to turn .md files into a static website. Custom made bash scripts to automate processes.</p>
+                        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 15px;">
+                            <strong>Built with:</strong> Bash, Hugo, Nginx, Cloudflare Tunnel
+                        </p>
+                        <a href="https://github.com/davtheconquerer/personalblog" class="btn secondary-btn" target="_blank">View Code on GitHub</a>
+                    </div>
+
+                    <div class="card">
+                        <h4>Signal Processing and Visualization Tool</h4>
+                        <p>Developed an internal tool for data visualization and analysis from Red Pitaya boards using a QT GUI with Python backend, which replaced expensive proprietary software and hardware.</p>
+                        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 15px;">
+                            <strong>Built with:</strong> Python, QT, Matplotlib, NumPy
+                        </p>
+                        <a href="https://cereus-ultrasonics.com/" class="btn secondary-btn" target="_blank">Cereus Ultrasonics Ltd</a>
+                        <img src="assets/images/cereus-ultrasonics-internal-tool-ss.webp" alt="Signal Processing Tool Screenshot" class="project-image">
+                    </div>
+                    
+                    <div class="card">
+                        <h4>Brick Breaker Game</h4>
+                        <p>A modern twist on the game Arkanoid using primarily Javascript and Phaser.js physics engine.</p>
+                        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 15px;">
+                            <strong>Built with:</strong> HTML, CSS, JavaScript, Phaser.js
+                        </p>
+                        <a href="https://github.com/davtheconquerer/brick-breaker-game" class="btn secondary-btn" target="_blank">View Code on GitHub</a>
+                        <img src="assets/images/brick-breaker-game-ss.png" alt="Brick Breaker Game Screenshot" class="project-image">
+                    </div>
+
+                    <div class="card">
+                        <h4>Dad Lore YouTube Series</h4>
+                        <p>Created a YouTube series called "Dad Lore" with yearly uploads, essentially capturing memories for my future self and tell my children one day, hence the name "Dad Lore".</p>
+                        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 15px;">
+                            <strong>Tools used:</strong> Da Vinci Resolve
+                        </p>
+                        <a href="https://www.youtube.com/playlist?list=PL5gmyG4QMYa8-I9_XbxuEqD-ATDdj1wUI" class="btn secondary-btn" target="_blank">View on YouTube</a>
+                        <img src="assets/images/dad-lore-series-thumbnail.png" alt="Dad Lore Series Thumbnail" class="project-image">
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="section">
+            <div class="container">
+                <h2>Experience</h2>
+                <div class="timeline">
+                    <div class="experience-item">
+                        <h3>Junior Software Engineer</h3>
+                        <h4>Cereus Ultrasonics Ltd | June 2025 - July 2025</h4>
+                        <p>Over 6 weeks, I developed an internal tool for data visualization and analysis from Red Pitaya boards using a QT GUI with Python backend.
+                            This tool replaced expensive proprietary software and hardware. Over the 6 weeks, I gained experience in software development, data visualization,
+                            presentation skills from stand up meetings each week, and working in a team environment. I also had the opportunity to learn about ultrasonic technology
+                            and its applications in various industries.
+                        </p>
+                    </div>
+
+                    <div class="experience-item">
+                        <h3>Crew Member</h3>
+                        <h4>McDonald's | August 2023 - May 2025</h4>
+                        <p>Responsible for taking orders, preparing food, and providing excellent customer service in a fast-paced environment.</p>
+                    </div>
+                    <div class="experience-item">
+                        <h3>Fundraiser</h3>
+                        <h4>YMCA Bournemouth Sleep Easy at St Edward's School Poole | Oct 2022 and Oct 2023</h4>
+                        <p>Raised a total of £245 over two fundraisers for the homeless in my local area.</p>
+                        <a href="https://www.justgiving.com/fundraising/davidwilliams16" class="btn primary-btn" target="_blank">JustGiving Page 2022</a>
+                        <a href="https://www.justgiving.com/page/davidwdoingsleepeasy" class="btn primary-btn" target="_blank">JustGiving Page 2023</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section">
+            <div class="container">
+                <h2>Technical Skills</h2>
+                <div class="skills-grid">
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">C/C++</span>
+                    <span class="skill-tag">HTML</span>
+                    <span class="skill-tag">CSS</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">Flask</span>
+                    <span class="skill-tag">SQL</span>
+                    <span class="skill-tag">Bash</span>
+                    <span class="skill-tag">Linux</span>
+                    <span class="skill-tag">Git & GitHub</span>
+                    <span class="skill-tag">Data Visualization</span>
+                    <span class="skill-tag">Presentation Skills</span>
+                    <span class="skill-tag">Software Development Lifecycle (SDLC)</span>
+                    <span class="skill-tag">Agile Methodology</span>
+                    </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="container">
+                <h2>Let's Connect</h2>
+                <p>I am currently open to new opportunities. Send me a message and I'll get back to you as soon as possible!</p>
+                <a href="https://www.linkedin.com/in/davidsionwilliams/" class="btn primary-btn" target="_blank">LinkedIn</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 David Williams. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>
