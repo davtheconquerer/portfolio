@@ -2,21 +2,21 @@
    1. SETUP & VARIABLES
    ========================================= */
 
-/* Import the Nunito font from your local assets */
+
 @font-face {
   font-family: 'Nunito';
   src: url('../assets/fonts/Nunito-VariableFont_wght.ttf') format('truetype');
   font-weight: 100 900; /* Supports all variable weights */
 }
 
-/* Define our color palette and sizing */
+/* Colour Palette and Sizing */
 :root {
-  --primary-blue: #0056b3;      /* Deep, trustworthy blue */
+  --primary-blue: #0056b3;      /* Deep blue */
   --primary-hover: #004494;     /* Slightly darker for hover */
   --secondary-blue: #e6f0fa;    /* Very light blue for subtle backgrounds */
   --bg-color: #f8f9fa;          /* Off-white minimalist background */
   --card-bg: #ffffff;           /* Crisp white for portfolio cards */
-  --text-main: #2b303a;         /* Dark slate gray (softer than black) */
+  --text-main: #2b303a;         /* Dark slate gray */
   --text-muted: #6c757d;        /* Gray for secondary text */
   --transition-speed: 0.2s;
 }
@@ -113,6 +113,14 @@ nav {
 
 .nav-links a:hover {
   color: var(--primary-blue);
+}
+
+/* Hides the mobile menu icon on desktop screens */
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  color: var(--primary-blue);
+  cursor: pointer;
 }
 
 /* =========================================
@@ -305,10 +313,33 @@ footer {
    ========================================= */
 
 @media (max-width: 768px) {
+
+  .menu-toggle {
+    display: block; 
+  }
+
+
   .nav-links {
     display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: var(--card-bg);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    padding: 20px 0;
+    text-align: center;
   }
-  
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 15px 0;
+  }
+
   .grid-container {
     grid-template-columns: 1fr; 
   }
