@@ -180,9 +180,9 @@ nav {
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.03);
   transition: transform var(--transition-speed), box-shadow var(--transition-speed);
-  height: 300px;       /* Sets a uniform height for all cards */
-  overflow-y: auto;    /* Adds a vertical scrollbar ONLY if content overflows */
-  display: flex;       /* Flexbox helps organize the inside of the card */
+  height: 310px;
+  overflow-y: auto;
+  display: flex;
   flex-direction: column;
 }
 
@@ -258,45 +258,6 @@ nav {
 }
 
 /* =========================================
-   8. CONTACT FORM
-   ========================================= */
-
-.contact-form {
-  background-color: var(--card-bg);
-  padding: 40px;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-}
-
-.form-group {
-  margin-bottom: 20px;
-}
-
-.form-group label {
-  display: block;
-  font-weight: 700;
-  margin-bottom: 8px;
-  color: var(--text-main);
-}
-
-.form-group input,
-.form-group textarea {
-  width: 100%;
-  padding: 12px;
-  border: 2px solid var(--secondary-blue);
-  border-radius: 8px;
-  font-family: inherit;
-  font-size: 1rem;
-  transition: border-color var(--transition-speed);
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-  outline: none;
-  border-color: var(--primary-blue);
-}
-
-/* =========================================
    9. FOOTER
    ========================================= */
 
@@ -341,7 +302,8 @@ footer {
   }
 
   .grid-container {
-    grid-template-columns: 1fr; 
+    padding: 25px;
+    grid-template-columns: 1fr;
   }
   
   h2 {
@@ -350,5 +312,13 @@ footer {
   
   .section {
     padding: 60px 0;
+    scroll-margin-top: 50px;
+  }
+
+  .experience-btn-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
   }
 }
