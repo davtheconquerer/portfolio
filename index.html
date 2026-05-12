@@ -3,21 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>David's Portfolio</title>
+    <meta name="description" content="David's portfolio - Software developer showcasing projects in Python, JavaScript, and more. View my work in web development, data visualization, and automation.">
+    <meta name="keywords" content="software developer, portfolio, Python, JavaScript, web development">
+    <meta name="author" content="David Williams">
+    
+    <!-- Open Graph for social sharing -->
+    <meta property="og:title" content="David's Portfolio">
+    <meta property="og:description" content="Explore my projects in software development, web design, and content creation.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://portfolio.davcore.net">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' font-weight='bold' fill='%230056b3'>D</text></svg>">
+    
+    <title>David's Portfolio - Software Developer</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 </head>
 <body>
 
     <header>
-        <nav>
+        <nav aria-label="Main navigation">
             <div class="logo">David's Portfolio</div>
-            <div class="menu-toggle" id="mobile-menu">&#9776;</div>
-            <ul class="nav-links">
+            <button class="menu-toggle" id="mobile-menu" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="nav-links" role="navigation">
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#skills">Skills</a></li>
-                <li><a href="https://github.com/davtheconquerer/" target="_blank">GitHub</a></li>
+                <li><a href="https://github.com/davtheconquerer/" target="_blank" rel="noopener noreferrer">GitHub</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -45,7 +63,7 @@
                         <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 15px;">
                             <strong>Built with:</strong> Bash, Hugo, Nginx, Cloudflare Tunnel
                         </p>
-                        <a href="https://github.com/davtheconquerer/personalblog" class="btn secondary-btn" target="_blank">View Code on GitHub</a>
+                        <a href="https://github.com/davtheconquerer/personalblog" class="btn secondary-btn" target="_blank" rel="noopener noreferrer">View Code on GitHub</a>
                     </div>
 
                     <div class="card">
@@ -54,7 +72,7 @@
                         <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 15px;">
                             <strong>Built with:</strong> Python, QT, Matplotlib, NumPy
                         </p>
-                        <a href="https://cereus-ultrasonics.com/" class="btn secondary-btn" target="_blank">View Cereus Ultrasonics Ltd</a>
+                        <a href="https://cereus-ultrasonics.com/" class="btn secondary-btn" target="_blank" rel="noopener noreferrer">View Cereus Ultrasonics Ltd</a>
                     </div>
                     
                     <div class="card">
@@ -63,8 +81,7 @@
                         <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 15px;">
                             <strong>Built with:</strong> HTML, CSS, JavaScript, Phaser.js
                         </p>
-                        <a href="https://github.com/davtheconquerer/brick-breaker-game" class="btn secondary-btn" target="_blank">View Code on GitHub</a>
-                        <img src="assets/images/brick-breaker-game-ss.png" alt="Brick Breaker Game Screenshot" class="project-image">
+                        <a href="https://github.com/davtheconquerer/brick-breaker-game" class="btn secondary-btn" target="_blank" rel="noopener noreferrer">View Code on GitHub</a>
                     </div>
 
                     <div class="card">
@@ -73,8 +90,7 @@
                         <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 15px;">
                             <strong>Tools used:</strong> Da Vinci Resolve
                         </p>
-                        <a href="https://www.youtube.com/playlist?list=PL5gmyG4QMYa8-I9_XbxuEqD-ATDdj1wUI" class="btn secondary-btn" target="_blank">View on YouTube</a>
-                        <img src="assets/images/dad-lore-series-thumbnail.png" alt="Dad Lore Series Thumbnail" class="project-image">
+                        <a href="https://www.youtube.com/playlist?list=PL5gmyG4QMYa8-I9_XbxuEqD-ATDdj1wUI" class="btn secondary-btn" target="_blank" rel="noopener noreferrer">View on YouTube</a>
                     </div>
 
                 </div>
@@ -105,8 +121,8 @@
                         <h4>YMCA Bournemouth Sleep Easy at St Edward's School Poole | Oct 2022 and Oct 2023</h4>
                         <p>Raised a total of £245 over two fundraisers for the homeless in my local area.</p>
                         <div class="experience-btn-container">
-                            <a href="https://www.justgiving.com/fundraising/davidwilliams16" class="btn primary-btn" target="_blank">JustGiving Page 2022</a>
-                            <a href="https://www.justgiving.com/page/davidwdoingsleepeasy" class="btn primary-btn" target="_blank">JustGiving Page 2023</a>
+                            <a href="https://www.justgiving.com/fundraising/davidwilliams16" class="btn primary-btn" target="_blank" rel="noopener noreferrer">JustGiving Page 2022</a>
+                            <a href="https://www.justgiving.com/page/davidwdoingsleepeasy" class="btn primary-btn" target="_blank" rel="noopener noreferrer">JustGiving Page 2023</a>
                         </div>
                     </div>
                 </div>
@@ -143,7 +159,7 @@
             <div class="container">
                 <h2>Let's Connect</h2>
                 <p>I am currently open to new opportunities. Send me a message and I'll get back to you as soon as possible!</p>
-                <a href="https://www.linkedin.com/in/davidwilliams1234/" class="btn primary-btn" target="_blank">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/davidwilliams1234/" class="btn primary-btn" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             </div>
         </section>
     </main>
@@ -151,6 +167,7 @@
     <footer>
         <div class="container">
             <p>&copy; 2026 David Williams. All rights reserved.</p>
+            <button id="back-to-top" class="back-to-top" aria-label="Back to top" title="Back to top"></button>
         </div>
     </footer>
 

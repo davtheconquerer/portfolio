@@ -38,6 +38,34 @@ body {
   line-height: 1.6;
 }
 
+/* Animation for fade-in on scroll */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.fade-in.delayed-1 {
+  animation-delay: 0.1s;
+}
+
+.fade-in.delayed-2 {
+  animation-delay: 0.2s;
+}
+
+.fade-in.delayed-3 {
+  animation-delay: 0.3s;
+}
+
 /* =========================================
    2. LAYOUT & TYPOGRAPHY
    ========================================= */
@@ -64,6 +92,19 @@ h2 {
   display: inline-block;
   padding-bottom: 5px;
   margin-bottom: 40px;
+  transition: all var(--transition-speed);
+  position: relative;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: var(--primary-blue);
+  transition: width 0.6s ease;
 }
 
 p {
@@ -81,6 +122,19 @@ header {
   position: sticky;
   top: 0;
   z-index: 1000;
+}
+
+/* Scroll progress bar */
+header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(to right, var(--primary-blue), var(--primary-hover));
+  width: 0%;
+  transition: width 0.1s ease;
 }
 
 nav {
@@ -109,18 +163,58 @@ nav {
   color: var(--text-main);
   font-weight: 600;
   transition: color var(--transition-speed);
+  position: relative;
 }
 
 .nav-links a:hover {
   color: var(--primary-blue);
 }
 
+.nav-links a.active {
+  color: var(--primary-blue);
+}
+
+.nav-links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--primary-blue);
+}
+
 /* Hides the mobile menu icon on desktop screens */
 .menu-toggle {
   display: none;
-  font-size: 1.8rem;
-  color: var(--primary-blue);
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 24px;
+  background: none;
+  border: none;
   cursor: pointer;
+  padding: 0;
+}
+
+.menu-toggle span {
+  width: 100%;
+  height: 3px;
+  background-color: var(--primary-blue);
+  border-radius: 2px;
+  transition: all var(--transition-speed) ease;
+}
+
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(10px, 10px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
 }
 
 /* =========================================
@@ -135,11 +229,16 @@ nav {
   font-weight: 700;
   cursor: pointer;
   border: none;
-  transition: background-color var(--transition-speed), transform 0.1s ease;
+  transition: background-color var(--transition-speed), transform 0.1s ease, box-shadow var(--transition-speed);
 }
 
 .btn:active {
   transform: scale(0.95);
+}
+
+.btn:focus {
+  outline: 2px solid var(--primary-blue);
+  outline-offset: 2px;
 }
 
 .primary-btn {
@@ -149,15 +248,18 @@ nav {
 
 .primary-btn:hover {
   background-color: var(--primary-hover);
+  box-shadow: 0 4px 12px rgba(0, 86, 179, 0.3);
 }
 
 .secondary-btn {
   background-color: var(--secondary-blue);
   color: var(--primary-blue);
+  border: 1px solid var(--primary-blue);
 }
 
 .secondary-btn:hover {
   background-color: #d0e3f7;
+  box-shadow: 0 4px 12px rgba(0, 86, 179, 0.2);
 }
 
 /* =========================================
@@ -180,24 +282,25 @@ nav {
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.03);
   transition: transform var(--transition-speed), box-shadow var(--transition-speed);
-  height: 310px;
-  overflow-y: auto;
   display: flex;
   flex-direction: column;
+  border: 1px solid rgba(0, 86, 179, 0.05);
 }
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  border-color: rgba(0, 86, 179, 0.15);
 }
 
 .project-image {
   width: 100%;
   height: auto;
   border-radius: 8px;
-  margin-top: 10px;
-  margin-bottom: 0px;
+  margin-top: auto;
+  margin-bottom: 0;
   border: 2px solid var(--primary-blue);
+  display: block;
 }
 
 /* =========================================
@@ -250,15 +353,56 @@ nav {
   border-radius: 30px;
   font-weight: 700;
   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  border: 1px solid rgba(0, 86, 179, 0.1);
+  transition: all var(--transition-speed);
 }
 
 .skill-tag:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 86, 179, 0.15);
+  border-color: rgba(0, 86, 179, 0.2);
+  background: linear-gradient(135deg, var(--secondary-blue), #f0f5ff);
 }
 
 /* =========================================
-   9. FOOTER
+   9. BACK TO TOP BUTTON
+   ========================================= */
+
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: var(--primary-blue);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: all var(--transition-speed);
+}
+
+.back-to-top:hover {
+  background-color: var(--primary-hover);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+
+.back-to-top.visible {
+  display: flex;
+}
+
+.back-to-top::after {
+  content: '↑';
+}
+
+/* =========================================
+   10. FOOTER
    ========================================= */
 
 footer {
@@ -267,18 +411,18 @@ footer {
   background-color: var(--card-bg);
   color: var(--text-muted);
   margin-top: 50px;
+  position: relative;
 }
 
 /* =========================================
-   10. MOBILE RESPONSIVENESS
+   11. MOBILE RESPONSIVENESS
    ========================================= */
 
 @media (max-width: 768px) {
 
   .menu-toggle {
-    display: block; 
+    display: flex; 
   }
-
 
   .nav-links {
     display: none;
@@ -286,11 +430,13 @@ footer {
     position: absolute;
     top: 70px;
     left: 0;
+    right: 0;
     width: 100%;
     background-color: var(--card-bg);
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
     padding: 20px 0;
     text-align: center;
+    z-index: 999;
   }
 
   .nav-links.active {
@@ -299,6 +445,10 @@ footer {
 
   .nav-links li {
     margin: 15px 0;
+  }
+
+  .nav-links a.active::after {
+    display: none;
   }
 
   .grid-container {
@@ -320,5 +470,13 @@ footer {
     flex-direction: column;
     align-items: flex-start;
     gap: 5px;
+  }
+
+  .back-to-top {
+    width: 45px;
+    height: 45px;
+    bottom: 15px;
+    right: 15px;
+    font-size: 18px;
   }
 }
